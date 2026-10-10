@@ -1,0 +1,2 @@
+id,title,authors,venue,year,doi_or_arxiv,task,reports_accuracy_or_f1,reports_lead_time,reports_handover_latency,reports_other_metrics,reports_inference_energy,reports_memory,reports_tail_latency,reports_dollar_or_carbon,notes
+1,,,,,,handover or pass-window prediction,yes/no,yes/no,yes/no,,yes/no,yes/no,yes/no,yes/no,

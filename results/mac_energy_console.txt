@@ -1,0 +1,37 @@
+[mac_energy] macOS-15.7.4-arm64-arm-64bit | 9 predictors | 3 reps x 15 s | about 8 min
+[rep 1/3] idle CPU power 0.541 W
+  3GPP-A3             1.78 us/decision  active  4.720 W  marginal  4.179 W  measured      7.42 uJ  proxy     26.64 uJ
+  Greedy              0.77 us/decision  active  4.741 W  marginal  4.201 W  measured      3.24 uJ  proxy     11.57 uJ
+  Kalman            209.79 us/decision  active  4.421 W  marginal  3.881 W  measured    814.15 uJ  proxy   3146.92 uJ
+  Kalman-vec         71.19 us/decision  active  4.419 W  marginal  3.878 W  measured    276.09 uJ  proxy   1067.86 uJ
+  PreHO-Geo          10.96 us/decision  active  5.342 W  marginal  4.802 W  measured     52.61 uJ  proxy    164.35 uJ
+  PHandover-MLP      10.48 us/decision  active  4.653 W  marginal  4.113 W  measured     43.08 uJ  proxy    157.14 uJ
+  DHO-DRL             9.84 us/decision  active  4.735 W  marginal  4.195 W  measured     41.27 uJ  proxy    147.59 uJ
+  LSTM-Attn         119.02 us/decision  active  4.490 W  marginal  3.950 W  measured    470.12 uJ  proxy   1785.34 uJ
+  GNN-DRL            44.07 us/decision  active  4.400 W  marginal  3.860 W  measured    170.10 uJ  proxy    661.09 uJ
+[rep 2/3] idle CPU power 0.526 W
+  GNN-DRL            44.06 us/decision  active  4.628 W  marginal  4.102 W  measured    180.70 uJ  proxy    660.83 uJ
+  LSTM-Attn         119.26 us/decision  active  4.391 W  marginal  3.865 W  measured    461.00 uJ  proxy   1788.93 uJ
+  DHO-DRL             9.93 us/decision  active  5.411 W  marginal  4.885 W  measured     48.49 uJ  proxy    148.90 uJ
+  PHandover-MLP      10.49 us/decision  active  4.678 W  marginal  4.152 W  measured     43.56 uJ  proxy    157.36 uJ
+  PreHO-Geo          10.79 us/decision  active  4.466 W  marginal  3.940 W  measured     42.50 uJ  proxy    161.80 uJ
+  Kalman-vec         71.11 us/decision  active  4.389 W  marginal  3.863 W  measured    274.73 uJ  proxy   1066.63 uJ
+  Kalman            208.70 us/decision  active  4.395 W  marginal  3.869 W  measured    807.44 uJ  proxy   3130.46 uJ
+  Greedy              0.79 us/decision  active  4.786 W  marginal  4.260 W  measured      3.35 uJ  proxy     11.81 uJ
+  3GPP-A3             1.81 us/decision  active  4.684 W  marginal  4.158 W  measured      7.54 uJ  proxy     27.20 uJ
+[rep 3/3] idle CPU power 0.450 W
+  3GPP-A3             1.80 us/decision  active  5.692 W  marginal  5.242 W  measured      9.42 uJ  proxy     26.97 uJ
+  Greedy              0.80 us/decision  active  5.833 W  marginal  5.383 W  measured      4.29 uJ  proxy     11.96 uJ
+  Kalman            214.50 us/decision  active  5.537 W  marginal  5.087 W  measured   1091.08 uJ  proxy   3217.55 uJ
+  Kalman-vec         72.69 us/decision  active  5.517 W  marginal  5.067 W  measured    368.30 uJ  proxy   1090.35 uJ
+  PreHO-Geo          11.04 us/decision  active  5.596 W  marginal  5.146 W  measured     56.82 uJ  proxy    165.64 uJ
+  PHandover-MLP      10.10 us/decision  active  5.646 W  marginal  5.196 W  measured     52.46 uJ  proxy    151.46 uJ
+  DHO-DRL             9.64 us/decision  active  5.693 W  marginal  5.243 W  measured     50.52 uJ  proxy    144.54 uJ
+  LSTM-Attn         118.00 us/decision  active  5.530 W  marginal  5.080 W  measured    599.42 uJ  proxy   1770.05 uJ
+  GNN-DRL            43.43 us/decision  active  5.430 W  marginal  4.980 W  measured    216.28 uJ  proxy    651.43 uJ
+
+[summary]
+  measured energy spread across predictors: 249x
+  measured / 15 W proxy on this Mac: 0.285 to 0.318
+  rank correlation, measured vs proxy on this Mac: 0.98
+  rank correlation, measured vs paper column B (8 predictors): 0.93

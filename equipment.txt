@@ -1,0 +1,49 @@
+Equipment used for the numbers in this artifact
+===============================================
+
+Implementation B (clean-room rebuild, this repository), development-grade run
+-----------------------------------------------------------------------------
+Host            shared cloud container, 1 vCPU, Intel Xeon Processor @ 2.10 GHz
+                (KVM hypervisor), 3.9 GiB RAM, no RAPL (/sys/class/powercap absent)
+OS              Ubuntu 24.04.4 LTS
+Python          3.12.3
+numpy           2.4.4
+sgp4            2.27
+torch           2.14.0+cpu (training only; never on the timed path)
+Isolation       none; CPU frequency governor not exposed; run_all.py --canonical
+                refuses to run on this host for that reason
+Timing grade    devgrade (results/table1_devgrade.csv, results/e1_budget_sweep_devgrade.csv,
+                results/review_additions_devgrade.csv, results/table1_devgrade_live.csv)
+Ephemeris       synthetic 53 degree Walker-delta shell (data/workload.npz) and the live
+                CelesTrak snapshot of 2026-10-03 (data/starlink_celestrak.tle, 10,679
+                satellites, median TLE age under one day at the epoch used); the twenty-city
+                scale run (data/workload_live20.npz) uses the same snapshot over 6 h
+Energy          wall-clock x scenario TDP proxy (15 W satellite, 150 W ground)
+
+Implementation A (first implementation, numbers quoted from the earlier draft)
+------------------------------------------------------------------------------
+Host            not recorded in the earlier draft; the paper describes B's host as
+                "a different host" and nothing more
+Energy          wall-clock x scenario TDP proxy, same scenarios
+
+Canonical run (how to produce submission-grade timing on your own machine)
+--------------------------------------------------------------------------
+Host            idle bare-metal x86 with Intel RAPL (reads /sys/class/powercap/intel-rapl:*)
+Steps           sudo cpupower frequency-set -g performance; disable turbo;
+                taskset -c <core> python run_all.py --canonical --skip-workload --skip-train
+                (copy data/ and weights/ from this artifact so workload and weights
+                are byte-identical)
+Energy          measure.RAPLBackend (implemented, untested in the container above);
+                pair with an external power meter as MLPerf Power requires
+Optional        NVIDIA Jetson Orin NX or Nano with INA3221 rails, applying the linear
+                calibration of Shalavi et al. (arXiv:2306.13107)
+
+Measured energy (experiments/mac_energy.py)
+-------------------------------------------
+Host            Apple Silicon MacBook Pro (arm64), macOS 15.7.4, mains power, Low Power
+                Mode off, other applications closed
+Python          3.12.15 (Homebrew), numpy 2.4.4, sgp4 2.27, single-threaded numerics
+Meter           powermetrics --samplers cpu_power -i 100 (on-chip power telemetry);
+                idle baseline subtracted; 3 interleaved repetitions of 15 s
+Results         results/mac_energy_console.txt (verbatim log), mac_energy_runs.csv,
+                mac_energy_summary.csv

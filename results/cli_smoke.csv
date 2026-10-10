@@ -1,0 +1,2 @@
+predictor,scenario,mean_us,p999_ms,mem_mb,E_uj,D_orbit_usd,C_g_gb,PT_star,binding
+LSTM-Attn,satellite,129.8,0.571,0.264,1946.6,2.02e-06,5.03e-06,38.93,E

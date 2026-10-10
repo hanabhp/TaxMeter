@@ -1,0 +1,10 @@
+predictor,macs,median_us,ns_per_mac
+3GPP-A3,10,3.23,322.8
+Greedy,5,1.21,242.85
+Kalman,1050,392.0,373.34
+Kalman-vec,1050,139.43,132.79
+PreHO-Geo,60,17.82,296.99
+PHandover-MLP,43520,20.36,0.47
+DHO-DRL,28096,14.11,0.5
+LSTM-Attn,190016,208.03,1.09
+GNN-DRL,98884,110.46,1.12

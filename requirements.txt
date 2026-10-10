@@ -1,0 +1,6 @@
+# Inference, workload generation and measurement (pure NumPy inference path)
+numpy==2.4.4
+sgp4==2.27
+# Training of the four learned predictors only; install the CPU wheel:
+#   pip install torch==2.14.0 --index-url https://download.pytorch.org/whl/cpu
+torch==2.14.0
